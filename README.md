@@ -1,14 +1,5 @@
 <div align="center">
-
-# 📊 Prueba-Práctica-
-### 📝 Evidencia Prueba Práctica
-
-```text
-===================================================================
-🏥          PHARMASYS - CONTROL DE VENTAS DE FARMACIA             🏥
-🚀            REPOSITORIO COLABORATIVO DE PROGRAMACIÓN            🚀
-===================================================================
-```
+<img src="./banner.svg" width="100%" alt="PharmaSys - Control de ventas de farmacia">
 
 > 👥 **EQUIPO DE TRABAJO:** Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano
 
