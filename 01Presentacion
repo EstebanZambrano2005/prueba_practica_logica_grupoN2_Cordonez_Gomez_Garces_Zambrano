@@ -1,17 +1,20 @@
 Evaluación Práctica: Programación en Java - Estructuras de Control
 
-Datos de la Entregable
-Universidad:** Universidad Técnica de Ambato
-Asignatura:** Programación / Lógica de Programación
-Grupo:** Grupo N° 2
-Proyecto Asignado:** PharmaSys - Control de Ventas de Farmacia
+Integrantes
+Universidad: Universidad Técnica de Ambato
+Asignatura:Programación y Lógica de Programación
+Grupo: Grupo N° 2
+Proyecto Asignado: PharmaSys - Control de Ventas de Farmacia
 
-Integrantes del Grupo:
-1. Cristian Gómez
-2. Kevin Garcés
-3. Erick Cordónez
-4. Esteban Zambrano
 
+| N° | Nombres y Apellidos | Rol / Aporte |
+| :---: | :--- | :--- |
+| 1 | Cristian Gómez | Desarrollo de Código Java |
+| 2 | Kevin Garcés | Algoritmo y Pseudocódigo |
+| 3 | Erick Cordónez | Análisis E-P-S y Prueba de Escritorio |
+| 4 | Esteban Zambrano | Documentación y Repositorio GitHub |
+
+---
 ---
 
 Descripción General del Proyecto
@@ -21,12 +24,12 @@ Este repositorio contiene la solución desarrollada en Java para la simulación 
 El programa permite procesar $N$ transacciones solicitadas por el usuario, registrando los datos básicos del producto, clasificándolo por categorías, validando si se requiere receta médica para autorizar la venta y aplicando descuentos acumulativos según la cantidad comprada.
 
 Requisitos Técnicos Implementados:
-Lectura de datos:** Uso de `java.util.Scanner`.
-Estructura de decisión:** `switch` para la categoría del producto.
-Estructuras condicionales:** `if / else` para comprobación de receta médica y asignación de descuentos.
-Validaciones de entrada:** Bucles `do-while` para asegurar valores válidos en precios y cantidades.
-Iteración:** Bucle `for` para el procesamiento iterativo de las $N$ ventas.
-Métricas:** Acumuladores para total vendido y descontado, junto con contadores para ventas rechazadas.
+Lectura de datos:Uso de `java.util.Scanner`.
+Estructura de decisión: `switch` para la categoría del producto.
+Estructuras condicionales: `if / else` para comprobación de receta médica y asignación de descuentos.
+Validaciones de entrada:Bucles `do-while` para asegurar valores válidos en precios y cantidades.
+Iteración: Bucle `for` para el procesamiento iterativo de las $N$ ventas.
+Métricas: Acumuladores para total vendido y descontado, junto con contadores para ventas rechazadas.
 
 ---
 
