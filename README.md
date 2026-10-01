@@ -23,7 +23,7 @@ FARMACIA - PRUEBA PRACTICA
 
 ## 📂 1. Estructura Dinámica del Repositorio
 
-> 💡 *Haz clic en las secciones de abajo para desplegar el contenido de manera interactiva.*
+> 💡 *Haz clic abajo para desplegar el mapa interactivo del proyecto.*
 
 <details>
 <summary><b>📂 Ver Organización de Carpetas (Clic aquí)</b></summary>
@@ -31,10 +31,9 @@ FARMACIA - PRUEBA PRACTICA
 
 ```text
 📁 prueba-practica-logica/
-├── 📁 ejercicio-1/          → Código Fuente Ejercicio1.java
 ├── 📁 ejercicio-2/          → Código Fuente Ejercicio2.java (PharmaSys)
 ├── 📁 evidencia-manual/     → Escaneos (Análisis, Pseudocódigo, Escritorio)
-└── 📁 capturas-ejecucion/   → Evidencias en VS Code
+└── 📁 capturas-ejecucion/   → Evidencias de Ejecución en VS Code
 ```
 </details>
 
@@ -42,7 +41,7 @@ FARMACIA - PRUEBA PRACTICA
 
 ## 🏥 2. Ejercicio 2 – PharmaSys: Farmacia
 
-### 📊 Flujo Metodológico
+### 📊 Flujo Metodológico Integrado
 
 ```mermaid
 graph TD
@@ -63,52 +62,72 @@ graph TD
 <br>
 
 ```java
-package ejercicio_2;
-
 import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        double totalVendido = 0, totalDescontado = 0;
+        double totalVendido = 0.0;
+        double totalDescontado = 0.0;
         int ventasRechazadas = 0;
         
-        System.out.print("Cantidad de ventas a procesar (N): ");
+        System.out.println("=================================================");
+        System.out.println("🏥   SISTEMA DE GESTIÓN DE FARMACIA - PHARMASYS   🏥");
+        System.out.println("=================================================");
+        
+        System.out.print("Ingrese la cantidad de ventas a procesar (N): ");
         int n = scanner.nextInt();
         
         int contador = 0;
         while (contador < n) {
-            System.out.println("\n--- REGISTRO DE VENTA #" + (contador + 1) + " ---");
+            System.out.println("\n-------------------------------------------------");
+            System.out.println("📝 REGISTRO DE VENTA #" + (contador + 1) + " DE " + n);
+            System.out.println("-------------------------------------------------");
             scanner.nextLine(); 
             
-            System.out.print("Producto: ");
-            String producto = scanner.nextLine();
-            System.out.print("Precio: ");
+            System.out.print("Nombre del producto: ");
+            String nombre = scanner.nextLine();
+            
+            System.out.print("Precio del producto ($): ");
             double precio = scanner.nextDouble();
-            System.out.print("Categoría (1=Gral, 2=Antibiótico, 3=Restringido): ");
+            
+            System.out.print("Categoría (1 = General, 2 = Antibióticos, 3 = Restringidos): ");
             int categoria = scanner.nextInt();
-            System.out.print("Cantidad: ");
+            
+            System.out.print("Cantidad a comprar: ");
             int cantidad = scanner.nextInt();
-            System.out.print("¿Tiene receta? (S/N): ");
+            
+            System.out.print("¿Requiere/presenta receta médica? (S/N): ");
             char receta = scanner.next().toUpperCase().charAt(0);
             
             if (precio <= 0 || cantidad <= 0 || (categoria < 1 || categoria > 3)) {
-                System.out.println("❌ Datos incorrectos.");
-                ventasRechazadas++; contador++; continue;
+                System.out.println("❌ VENTA RECHAZADA: Datos inválidos.");
+                ventasRechazadas++;
+                contador++;
+                continue;
             }
+            
             if ((categoria == 2 || categoria == 3) && receta != 'S') {
-                System.out.println("❌ Requiere receta.");
-                ventasRechazadas++; contador++; continue;
+                System.out.println("❌ VENTA RECHAZADA: Requiere receta obligatoria.");
+                ventasRechazadas++;
+                contador++;
+                continue;
             }
             
             double subtotal = precio * cantidad;
-            double porcentajeDescuento = 0;
+            double porcentajeDescuento = 0.0;
             
             switch (categoria) {
-                case 1: if (cantidad > 5) porcentajeDescuento = 0.05; break;
-                case 2: if (cantidad > 3) porcentajeDescuento = 0.10; break;
-                case 3: porcentajeDescuento = 0.0; break;
+                case 1:
+                    if (cantidad > 5) porcentajeDescuento = 0.05;
+                    break;
+                case 2:
+                    if (cantidad > 3) porcentajeDescuento = 0.10;
+                    break;
+                case 3:
+                    porcentajeDescuento = 0.0;
+                    break;
             }
             
             double descuentoCalculado = subtotal * porcentajeDescuento;
@@ -117,16 +136,19 @@ public class Ejercicio2 {
             totalVendido += totalPagar;
             totalDescontado += descuentoCalculado;
             
-            System.out.printf("✅ Procesada. Total: \$.2f\n", totalPagar);
+            System.out.println("✅ Venta procesada con éxito.");
+            System.out.printf("   Total a pagar: $%.2f\n", totalPagar);
+            
             contador++;
         }
         
-        System.out.println("\n=================================");
-        System.out.println("📊 REPORTE FINAL - PHARMASYS");
-        System.out.println("=================================");
-        System.out.printf("💰 Total Neto Vendido: \$.2f\n", totalVendido);
-        System.out.printf("📉 Total Monto Descontado: \$.2f\n", totalDescontado);
-        System.out.println("❌ Total Ventas Rechazadas: " + ventasRechazadas);
+        System.out.println("\n=================================================");
+        System.out.println("📊        REPORTE FINAL GENERAL DE VENTAS        📊");
+        System.out.println("=================================================");
+        System.out.printf("💰 Total Neto Vendido:           $%.2f\n", totalVendido);
+        System.out.printf("📉 Total Monto Descontado:       $%.2f\n", totalDescontado);
+        System.out.println("❌ Cantidad de Ventas Rechazadas: " + ventasRechazadas);
+        System.out.println("=================================================");
         
         scanner.close();
     }
@@ -152,3 +174,4 @@ public class Ejercicio2 {
 *Haga clic en la estrella (Star) del repositorio si el resultado fue satisfactorio.*
 
 </div>
+
