@@ -1,17 +1,16 @@
 <div align="center">
 
-# Prueba-Práctica-
+# 📊 Prueba-Práctica-
+### 📝 Evidencia Prueba Práctica
 
-### Evidencia Prueba Práctica
+```text
+===================================================================
+🏥          PHARMASYS - CONTROL DE VENTAS DE FARMACIA             🏥
+🚀            REPOSITORIO COLABORATIVO DE PROGRAMACIÓN            🚀
+===================================================================
+```
 
-<!-- BANNER DE BIENVENIDA CORREGIDO Y 100% COMPATIBLE -->
-<img src="https://vercel.app" width="100%" alt="Banner Prueba Practica" />
-
-<br><br>
-
-<b>👥 EQUIPO DE TRABAJO: Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano 👥</b>
-
-</div>
+> 👥 **EQUIPO DE TRABAJO:** Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano
 
 ---
 
