@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="100%">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#1f3b46"/>
+    </linearGradient>
+    <linearGradient id="txt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00ff9d"/>
+      <stop offset="1" stop-color="#7dffcf"/>
+    </linearGradient>
+    <path id="wave" d="M 60 250 Q 100 218 140 250 T 220 250 T 300 250 T 380 250 T 460 250 T 540 250 T 620 250 T 700 250 T 780 250 T 860 250 L 880 250"/>
+  </defs>
+
+  <rect width="1000" height="360" fill="url(#bg)"/>
+
+  <g transform="translate(0,20)">
+
+    <!-- Estrellas -->
+    <g fill="#ffffff">
+      <circle cx="90" cy="40" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="95" r="1.2"><animate attributeName="opacity" values="1;0.2;1" dur="4s" repeatCount="indefinite"/></circle>
+      <circle cx="700" cy="45" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="3.5s" repeatCount="indefinite"/></circle>
+      <circle cx="790" cy="110" r="1.2"><animate attributeName="opacity" values="1;0.2;1" dur="2.5s" repeatCount="indefinite"/></circle>
+      <circle cx="930" cy="60" r="1"><animate attributeName="opacity" values="0.2;1;0.2" dur="4.5s" repeatCount="indefinite"/></circle>
+      <circle cx="140" cy="180" r="1"><animate attributeName="opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- Titulo -->
+    <text x="440" y="130" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="48" font-weight="800" fill="url(#txt)">PRUEBA PRÁCTICA LÓGICA</text>
+
+    <!-- Emisor (izquierda) -->
+    <g stroke="#00ff9d" fill="none" stroke-width="1.5">
+      <circle cx="40" cy="250" r="5" fill="#00ff9d"/>
+      <path d="M 52 238 A 17 17 0 0 1 52 262"><animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/></path>
+      <path d="M 60 230 A 27 27 0 0 1 60 270"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.3s" repeatCount="indefinite"/></path>
+    </g>
+
+    <!-- Red inalambrica fina y horizontal -->
+    <use href="#wave" fill="none" stroke="#00ff9d" stroke-width="1.2" stroke-dasharray="6 8" opacity="0.9">
+      <animate attributeName="stroke-dashoffset" from="0" to="-56" dur="1.6s" repeatCount="indefinite"/>
+    </use>
+    <use href="#wave" fill="none" stroke="#d1fae5" stroke-width="0.8" stroke-dasharray="2 14" opacity="0.8" transform="translate(0,6)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-64" dur="1.2s" repeatCount="indefinite"/>
+    </use>
+    <g fill="#ffffff">
+      <circle r="3"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#wave"/></animateMotion></circle>
+      <circle r="3"><animateMotion dur="3s" begin="1s" repeatCount="indefinite"><mpath href="#wave"/></animateMotion></circle>
+      <circle r="3"><animateMotion dur="3s" begin="2s" repeatCount="indefinite"><mpath href="#wave"/></animateMotion></circle>
+    </g>
+
+    <!-- Celular (derecha) -->
+    <circle cx="880" cy="250" r="6" fill="#00ff9d" opacity="0.6">
+      <animate attributeName="r" values="4;18;4" dur="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="1.6s" repeatCount="indefinite"/>
+    </circle>
+    <rect x="880" y="130" width="80" height="160" rx="14" fill="#07140f" stroke="#00ff9d" stroke-width="2"/>
+    <rect x="908" y="137" width="24" height="5" rx="2.5" fill="#0f5f55"/>
+    <rect x="888" y="150" width="64" height="124" rx="8" fill="#0b3a30"/>
+    <g fill="none" stroke="#00ff9d" stroke-width="3" stroke-linecap="round" transform="translate(920,225)">
+      <path d="M -22 -8 A 32 32 0 0 1 22 -8"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" begin="0.4s" repeatCount="indefinite"/></path>
+      <path d="M -14 2 A 20 20 0 0 1 14 2"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" begin="0.2s" repeatCount="indefinite"/></path>
+      <path d="M -7 12 A 9 9 0 0 1 7 12"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite"/></path>
+      <circle cx="0" cy="22" r="2.5" fill="#00ff9d" stroke="none"/>
+    </g>
+
+  </g>
+</svg>
