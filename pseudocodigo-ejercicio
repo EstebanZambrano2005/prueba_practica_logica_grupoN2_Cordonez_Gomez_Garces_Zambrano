@@ -1,0 +1,85 @@
+3. Algoritmo en Pseudocódigo
+
+```text
+Algoritmo PharmaSys
+    Definir totalVendido, totalDescontado, precio, subtotal, desc, total Como Real
+    Definir ventasRechazadas, N, i, cat, cant, reqReceta, presReceta Como Entero
+    Definir codigo, nombre, nomCat Como Cadena
+
+    totalVendido <- 0
+    totalDescontado <- 0
+    ventasRechazadas <- 0
+
+    Escribir "Ingrese el numero de ventas (N):"
+    Leer N
+
+    Mientras N <= 0 Hacer
+        Escribir "El numero de ventas debe ser mayor a 0:"
+        Leer N
+    FinMientras
+
+    Para i <- 1 Hasta N Con Paso 1 Hacer
+        Escribir "--- VENTA ", i, " ---"
+        Escribir "Codigo del producto:"
+        Leer codigo
+        Escribir "Nombre del producto:"
+        Leer nombre
+
+        Repetir
+            Escribir "Precio unitario (>0):"
+            Leer precio
+        Hasta Que precio > 0
+
+        Escribir "Seleccione Categoria (1.Analgesico, 2.Antibiotico, 3.Vitamina, 4.Otro):"
+        Leer cat
+
+        Segun cat Hacer
+            1: nomCat <- "Analgesico"
+            2: nomCat <- "Antibiotico"
+            3: nomCat <- "Vitamina"
+            De Otro Modo: nomCat <- "Otro"
+        FinSegun
+
+        Repetir
+            Escribir "Cantidad (>0):"
+            Leer cant
+        Hasta Que cant > 0
+
+        Escribir "¿Requiere receta? (1:Si / 0:No):"
+        Leer reqReceta
+
+        presReceta <- 0
+        Si reqReceta == 1 Entonces
+            Escribir "¿Presenta receta? (1:Si / 0:No):"
+            Leer presReceta
+        FinSi
+
+        Si reqReceta == 1 Y presReceta == 0 Entonces
+            Escribir "VENTA RECHAZADA: Falta receta medica."
+            ventasRechazadas <- ventasRechazadas + 1
+        Sino
+            subtotal <- precio * cant
+            desc <- 0
+
+            Si cant >= 10 Entonces
+                desc <- subtotal * 0.15
+            Sino
+                Si cant >= 5 Entonces
+                    desc <- subtotal * 0.08
+                FinSi
+            FinSi
+
+            total <- subtotal - desc
+            totalVendido <- totalVendido + total
+            totalDescontado <- totalDescontado + desc
+
+            Escribir "Subtotal: $", subtotal
+            Escribir "Descuento: $", desc
+            Escribir "Total a Pagar: $", total
+        FinSi
+    FinPara
+
+    Escribir "================================="
+    Escribir "RESUMEN GENERAL"
+    Escribir "Total Vendido: $", totalVendido
+    Escrib
