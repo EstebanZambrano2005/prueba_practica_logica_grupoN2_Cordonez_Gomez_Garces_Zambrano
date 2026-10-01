@@ -2,8 +2,9 @@
 FARMACIA - PRUEBA PRACTICA
 <div align="center">
 
-<!-- BANNER DE BIENVENIDA CON EFECTO DE ANIMACIÓN DE TEXTO -->
-<img src="https://demolab.com⚡+EXAMEN+PRÁCTICO+DE+SOFTWARE+⚡;✨+UNIVERSIDAD+TÉCNICA+DE+AMBATO+✨;🏥+SISTEMA+PHARMASYS+ACTIVADO+🏥" alt="Typing SVG" />
+# ⚡ EXAMEN PRÁCTICO DE SOFTWARE ⚡
+## 🏥 SISTEMA PHARMASYS ACTIVADO 🏥
+### ✨ UNIVERSIDAD TÉCNICA DE AMBATO ✨
 
 <p align="center">
   <img src="https://shields.io" />
@@ -26,7 +27,7 @@ FARMACIA - PRUEBA PRACTICA
 > 💡 *Haz clic abajo para desplegar el mapa interactivo del proyecto.*
 
 <details>
-<summary><b>📂 Ver Organización de Carpetas (Clic aquí)</b></summary>
+<summary><b>📂 Ver Organización del Proyecto (Clic aquí)</b></summary>
 <br>
 
 ```text
@@ -92,7 +93,7 @@ public class Ejercicio2 {
             System.out.print("Precio del producto ($): ");
             double precio = scanner.nextDouble();
             
-            System.out.print("Categoría (1 = General, 2 = Antibióticos, 3 = Restringidos): ");
+            System.out.print("Categoría (1 = Genérico, 2 = Comercial, 3 = Especializado): ");
             int categoria = scanner.nextInt();
             
             System.out.print("Cantidad a comprar: ");
@@ -108,7 +109,7 @@ public class Ejercicio2 {
                 continue;
             }
             
-            if ((categoria == 2 || categoria == 3) && receta != 'S') {
+            if (categoria == 3 && receta != 'S') {
                 System.out.println("❌ VENTA RECHAZADA: Requiere receta obligatoria.");
                 ventasRechazadas++;
                 contador++;
@@ -120,17 +121,25 @@ public class Ejercicio2 {
             
             switch (categoria) {
                 case 1:
-                    if (cantidad > 5) porcentajeDescuento = 0.05;
+                    porcentajeDescuento = 0.05;
                     break;
                 case 2:
-                    if (cantidad > 3) porcentajeDescuento = 0.10;
+                    porcentajeDescuento = 0.10;
                     break;
                 case 3:
-                    porcentajeDescuento = 0.0;
+                    porcentajeDescuento = 0.15;
                     break;
             }
             
-            double descuentoCalculado = subtotal * porcentajeDescuento;
+            double descuentoCantidad = 0.0;
+            if (cantidad >= 10 && cantidad < 20) {
+                descuentoCantidad = 0.05;
+            } else if (cantidad >= 20) {
+                descuentoCantidad = 0.10;
+            }
+            
+            double porcentajeTotal = porcentajeDescuento + descuentoCantidad;
+            double descuentoCalculado = subtotal * porcentajeTotal;
             double totalPagar = subtotal - descuentoCalculado;
             
             totalVendido += totalPagar;
@@ -174,4 +183,5 @@ public class Ejercicio2 {
 *Haga clic en la estrella (Star) del repositorio si el resultado fue satisfactorio.*
 
 </div>
+
 
