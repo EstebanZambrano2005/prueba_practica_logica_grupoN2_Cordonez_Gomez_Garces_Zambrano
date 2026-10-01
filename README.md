@@ -1,27 +1,25 @@
-Evaluación Práctica: Programación en Java - Estructuras de Control
 <div align="center">
 
 # Prueba-Práctica-
 
 ### Evidencia Prueba Práctica
 
-<!-- BANNER PERSONALIZADO DE BIENVENIDA -->
+<!-- BANNER DE BIENVENIDA CORREGIDO Y 100% COMPATIBLE -->
 <img src="https://vercel.app" width="100%" alt="Banner Prueba Practica" />
 
-<br>
+<br><br>
 
----
-
-<!-- TEXTO EN MOVIMIENTO CON LOS INTEGRANTES ACTUALIZADOS -->
-<marquee scrollamount="5" behavior="scroll" direction="left">
-  <b>👥 EQUIPO DE TRABAJO: Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano 👥</b>
-</marquee>
+<b>👥 EQUIPO DE TRABAJO: Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano 👥</b>
 
 </div>
 
-Asignatura: Programación / Lógica de Programación  
-Proyecto: PharmaSys - Control de Ventas de Farmacia  
-Grupo: N° 2  
+---
+
+### 📋 Información General
+*   **Asignatura:** Programación / Lógica de Programación
+*   **Proyecto:** PharmaSys - Control de Ventas de Farmacia
+*   **Grupo:** N° 2
+
 
 ### Integrantes
 
