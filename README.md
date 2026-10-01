@@ -17,8 +17,8 @@ Grupo: N° 2
 Ejercicio 1: PharmaSys
 Programa en Java que registra los productos de una farmacia con los siguientes datos: código, nombre, precio, categoría, cantidad y si requiere/presenta receta.
 
-- Se usa `switch` para procesar la categoría del producto.
-- Se usa `if` para validar la receta y para aplicar el descuento según la cantidad.
+- Se usa "switch" para procesar la categoría del producto.
+- Se usa "if" para validar la receta y para aplicar el descuento según la cantidad.
 - Se procesan N ventas.
 - Al finalizar se muestra: total vendido, total descontado y ventas rechazadas.
 
