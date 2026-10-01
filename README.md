@@ -1,14 +1,14 @@
 Evaluación Práctica: Programación en Java - Estructuras de Control
 <div align="center">
 
-# ⚡ EVALUACIÓN PRÁCTICA: ESTRUCTURAS DE CONTROL ⚡
-## 🏥 PHARMASYS • CONTROL DE VENTAS DE FARMACIA 🏥
-### ✨ INGENIERÍA DE SOFTWARE — GRUPO N° 2 ✨
+# Prueba-Práctica-
 
-<p align="center">
-  <img src="https://shields.io" />
-  <img src="https://shields.io" />
-</p>
+### Evidencia Prueba Práctica
+
+<!-- BANNER PERSONALIZADO DE BIENVENIDA -->
+<img src="https://vercel.app" width="100%" alt="Banner Prueba Practica" />
+
+<br>
 
 ---
 
