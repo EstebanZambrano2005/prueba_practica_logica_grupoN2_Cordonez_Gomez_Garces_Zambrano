@@ -1,4 +1,23 @@
 Evaluación Práctica: Programación en Java - Estructuras de Control
+<div align="center">
+
+# ⚡ EVALUACIÓN PRÁCTICA: ESTRUCTURAS DE CONTROL ⚡
+## 🏥 PHARMASYS • CONTROL DE VENTAS DE FARMACIA 🏥
+### ✨ INGENIERÍA DE SOFTWARE — GRUPO N° 2 ✨
+
+<p align="center">
+  <img src="https://shields.io" />
+  <img src="https://shields.io" />
+</p>
+
+---
+
+<!-- TEXTO EN MOVIMIENTO CON LOS INTEGRANTES ACTUALIZADOS -->
+<marquee scrollamount="5" behavior="scroll" direction="left">
+  <b>👥 EQUIPO DE TRABAJO: Alex Cabrera • Erick Cordónez • Kevin Garcés • Cristian Gómez • Esteban Zambrano 👥</b>
+</marquee>
+
+</div>
 
 Asignatura: Programación / Lógica de Programación  
 Proyecto: PharmaSys - Control de Ventas de Farmacia  
