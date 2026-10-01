@@ -1,0 +1,2 @@
+# prueba_practica_logica_grupoN2_Cordonez_Gomez_Garces_Zambrano
+FARMACIA - PRUEBA PRACTICA
