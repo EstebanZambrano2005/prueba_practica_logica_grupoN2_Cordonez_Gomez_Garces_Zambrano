@@ -19,7 +19,7 @@ Proyecto Asignado: PharmaSys - Control de Ventas de Farmacia
 
 Descripción General del Proyecto
 
-Este repositorio contiene la solución desarrollada en Java para la simulación del sistema de facturación y control de inventario de una farmacia (`PharmaSys`). 
+Este repositorio contiene la solución desarrollada en Java para la simulación del sistema de facturación y control de inventario de una farmacia.
 
 El programa permite procesar $N$ transacciones solicitadas por el usuario, registrando los datos básicos del producto, clasificándolo por categorías, validando si se requiere receta médica para autorizar la venta y aplicando descuentos acumulativos según la cantidad comprada.
 
