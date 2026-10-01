@@ -14,4 +14,4 @@ Grupo: N° 2
 | 4 | Cristian Gómez | Desarrollo de Código Java |
 | 5 | Esteban Zambrano | Documentación y Repositorio GitHub |
 
-#Describción del ejercicio
+Describción del ejercicio
