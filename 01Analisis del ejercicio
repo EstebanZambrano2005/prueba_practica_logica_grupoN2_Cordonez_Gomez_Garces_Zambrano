@@ -1,0 +1,62 @@
+Evidencia del Examen Práctico - Grupo 2 Farmacia
+
+Integrantes / Datos de la entrega:
+Estudiante: Cristian Gomez - Erick Cordonez - Kevin Garces - Esteban Zambrano
+Asignatura:** Programación / Lógica de Programación
+Ejercicio Asignado: GRUPO 2 – PharmaSys: Farmacia
+
+---
+
+1. Análisis del Problema
+
+Descripción del sistema
+El sistema **PharmaSys** permite gestionar las ventas de productos farmacéuticos para $N$ clientes o transacciones. El programa registra datos del producto, clasifica el tipo de producto, valida la vigencia/presentación de receta médica, aplica descuentos según el volumen de compra y genera un reporte con el acumulado del dinero recaudado, los descuentos aplicados y las ventas rechazadas.
+
+---
+2. Definición de Entradas, Procesos y Salidas
+
+Entradas
+* N: Número total de ventas a procesar (entero $> 0$).
+* `codigo`: Código identificador del producto (`String`).
+* `nombre`: Nombre del producto (`String`).
+* `precio`: Precio unitario del producto (`double` $> 0$).
+* `cat`: Categoría del producto (`int` de 1 a 4).
+* `cant`: Cantidad de unidades a comprar (`int` $> 0$).
+* `reqReceta`: Indicador de si el producto requiere receta médica (1 = Sí, 0 = No).
+* `presReceta`: Indicador de si presenta la receta médica (1 = Sí, 0 = No).
+
+Procesos
+1. Leer y validar $N$ mediante un bucle para garantizar $N > 0$.
+2. Iterar $N$ veces utilizando un bucle `for` (desde $i = 1$ hasta $N$):
+   Solicitar `codigo` y `nombre`.
+   Validar mediante `do-while` que el `precio` sea mayor a $0$.
+   Asignar la categoría usando la estructura de selección múltiple `switch (cat)`:
+     * `1`: Analgésico
+     * `2`: Antibiótico
+     * `3`: Vitamina
+     * `Default`: Otro
+   * Validar mediante `do-while` que la `cantidad` sea mayor a $0$.
+   * Verificar la validez de la venta mediante estructura condicional `if`:
+     Si `reqReceta == 1` **Y** `presReceta == 0`: La venta es **Rechazada**.
+      Incrementar el contador `ventasRechazadas = ventasRechazadas + 1`.
+     De lo contrario (Venta Aprobada)**:
+       Calcular el subtotal: $\text{subtotal} = \text{precio} \times \text{cantidad}$.
+       Determinar el porcentaje de descuento según la cantidad mediante `if / else if`:
+          Si $\text{cantidad} \ge 10 \rightarrow \text{descuento} = 15\%$ ($0.15$).
+          Si $\text{cantidad} \ge 5 \rightarrow \text{descuento} = 8\%$ ($0.08$).
+          En otro caso $\rightarrow \text{descuento} = 0\%$.
+       Calcular el monto final a pagar: $\text{total} = \text{subtotal} - \text{descuento}$.
+       Acumular totales:
+          $\text{totalVendido} = \text{totalVendido} + \text{total}$
+          $\text{totalDescontado} = \text{totalDescontado} + \text{descuento}$
+
+Mostrar el reporte final con los acumuladores y contadores generales.
+
+Salidas 
+Detalle de cada venta (Subtotal, Descuento, Total a pagar o Mensaje de Rechazo).
+Reporte Final:
+Total general vendido (`totalVendido`).
+Total general descontado (`totalDescontado`).
+Total de ventas rechazadas (`ventasRechazadas`).
+
+---
