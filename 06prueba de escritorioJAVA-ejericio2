@@ -1,0 +1,39 @@
+Ingrese el numero de ventas (N): 3
+
+--- Venta 1 ---
+Codigo: 4
+Nombre: Esteban
+Precio (>0): 6
+Categoria (1.Analgesico, 2.Antibiotico, 3.Vitamina, 4.Otro): 1
+Cantidad (>0): 2
+¿Requiere receta? (1:Si / 0:No): 1
+¿Presenta receta? (1:Si / 0:No): 0
+-> VENTA RECHAZADA (Falta receta)
+
+--- Venta 2 ---
+Codigo: 5
+Nombre: Cristian
+Precio (>0): 7
+Categoria (1.Analgesico, 2.Antibiotico, 3.Vitamina, 4.Otro): 3
+Cantidad (>0): 2
+¿Requiere receta? (1:Si / 0:No): 0
+-> Subtotal: $14.0 | Desc: $0.0 | Total: $14.0
+
+--- Venta 3 ---
+Codigo: 4
+Nombre: Erick 
+Precio (>0): 3
+Categoria (1.Analgesico, 2.Antibiotico, 3.Vitamina, 4.Otro): 3
+Cantidad (>0): 6
+¿Requiere receta? (1:Si / 0:No): 1
+¿Presenta receta? (1:Si / 0:No): 0
+-> VENTA RECHAZADA (Falta receta)
+
+=== RESUMEN GENERAL ===
+Total Vendido: $14.0
+Total Descontado: $0.0
+Ventas Rechazadas: 2
+
+C:\CARRERA SOFTWARE>
+
+C:\CARRERA SOFTWARE>
