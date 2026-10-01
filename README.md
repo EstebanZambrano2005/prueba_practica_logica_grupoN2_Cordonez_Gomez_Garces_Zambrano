@@ -63,101 +63,115 @@ graph TD
 <br>
 
 ```java
+package ejercicio_2;
+
 import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        double totalVendido = 0.0;
-        double totalDescontado = 0.0;
+        // Definición de variables idénticas al pseudocódigo
+        int nVentas, opCategoria, cantidad;
+        double precio, subtotal, descuentoCantidad, valorDescuento, totalPagar;
+        double totalVendidoGeneral = 0.0;
+        double totalDescontadoGeneral = 0.0;
         int ventasRechazadas = 0;
+        String codigo, nombre, categoria;
+        char requiereReceta;
+        double porcentajeDescCat;
         
-        System.out.println("=================================================");
-        System.out.println("🏥   SISTEMA DE GESTIÓN DE FARMACIA - PHARMASYS   🏥");
-        System.out.println("=================================================");
-        
-        System.out.print("Ingrese la cantidad de ventas a procesar (N): ");
-        int n = scanner.nextInt();
-        
-        int contador = 0;
-        while (contador < n) {
-            System.out.println("\n-------------------------------------------------");
-            System.out.println("📝 REGISTRO DE VENTA #" + (contador + 1) + " DE " + n);
-            System.out.println("-------------------------------------------------");
-            scanner.nextLine(); 
-            
-            System.out.print("Nombre del producto: ");
-            String nombre = scanner.nextLine();
-            
-            System.out.print("Precio del producto ($): ");
-            double precio = scanner.nextDouble();
-            
-            System.out.print("Categoría (1 = Genérico, 2 = Comercial, 3 = Especializado): ");
-            int categoria = scanner.nextInt();
-            
-            System.out.print("Cantidad a comprar: ");
-            int cantidad = scanner.nextInt();
-            
-            System.out.print("¿Requiere/presenta receta médica? (S/N): ");
-            char receta = scanner.next().toUpperCase().charAt(0);
-            
-            if (precio <= 0 || cantidad <= 0 || (categoria < 1 || categoria > 3)) {
-                System.out.println("❌ VENTA RECHAZADA: Datos inválidos.");
-                ventasRechazadas++;
-                contador++;
-                continue;
-            }
-            
-            if (categoria == 3 && receta != 'S') {
-                System.out.println("❌ VENTA RECHAZADA: Requiere receta obligatoria.");
-                ventasRechazadas++;
-                contador++;
-                continue;
-            }
-            
-            double subtotal = precio * cantidad;
-            double porcentajeDescuento = 0.0;
-            
-            switch (categoria) {
-                case 1:
-                    porcentajeDescuento = 0.05;
-                    break;
-                case 2:
-                    porcentajeDescuento = 0.10;
-                    break;
-                case 3:
-                    porcentajeDescuento = 0.15;
-                    break;
-            }
-            
-            double descuentoCantidad = 0.0;
-            if (cantidad >= 10 && cantidad < 20) {
-                descuentoCantidad = 0.05;
-            } else if (cantidad >= 20) {
-                descuentoCantidad = 0.10;
-            }
-            
-            double porcentajeTotal = porcentajeDescuento + descuentoCantidad;
-            double descuentoCalculado = subtotal * porcentajeTotal;
-            double totalPagar = subtotal - descuentoCalculado;
-            
-            totalVendido += totalPagar;
-            totalDescontado += descuentoCalculado;
-            
-            System.out.println("✅ Venta procesada con éxito.");
-            System.out.printf("   Total a pagar: $%.2f\n", totalPagar);
-            
-            contador++;
+        // Validación del número de ventas
+        System.out.print("Ingrese el número de ventas a procesar: ");
+        nVentas = scanner.nextInt();
+        while (nVentas <= 0) {
+            System.out.print("Error. Ingrese un valor mayor a 0: ");
+            nVentas = scanner.nextInt();
         }
         
-        System.out.println("\n=================================================");
-        System.out.println("📊        REPORTE FINAL GENERAL DE VENTAS        📊");
-        System.out.println("=================================================");
-        System.out.printf("💰 Total Neto Vendido:           $%.2f\n", totalVendido);
-        System.out.printf("📉 Total Monto Descontado:       $%.2f\n", totalDescontado);
-        System.out.println("❌ Cantidad de Ventas Rechazadas: " + ventasRechazadas);
-        System.out.println("=================================================");
+        // Ciclo principal
+        for (int i = 1; i <= nVentas; i++) {
+            System.out.println("--- Venta " + i + " ---");
+            scanner.nextLine(); // Limpiar búfer
+            
+            System.out.print("Ingrese código: ");
+            codigo = scanner.nextLine();
+            
+            System.out.print("Ingrese nombre: ");
+            nombre = scanner.nextLine();
+            
+            // Validación de precio > 0
+            do {
+                System.out.print("Ingrese precio unitario: ");
+                precio = scanner.nextDouble();
+            } while (precio <= 0);
+            
+            System.out.print("Seleccione categoría (1: Genérico, 2: Comercial, 3: Especializado): ");
+            opCategoria = scanner.nextInt();
+            
+            // Estructura Según (Switch en Java)
+            switch (opCategoria) {
+                case 1:
+                    categoria = "Genérico";
+                    porcentajeDescCat = 0.05;
+                    break;
+                case 2:
+                    categoria = "Comercial";
+                    porcentajeDescCat = 0.10;
+                    break;
+                case 3:
+                    categoria = "Especializado";
+                    porcentajeDescCat = 0.15;
+                    break;
+                default:
+                    categoria = "Desconocido";
+                    porcentajeDescCat = 0.0;
+                    break;
+            }
+            
+            // Validación de cantidad > 0
+            do {
+                System.out.print("Ingrese cantidad: ");
+                cantidad = scanner.nextInt();
+            } while (cantidad <= 0);
+            
+            System.out.print("¿Requiere receta médica? (s/n): ");
+            requiereReceta = scanner.next().toLowerCase().charAt(0);
+            
+            // Lógica de rechazo por receta médica
+            if (categoria.equals("Especializado") && requiereReceta == 'n') {
+                System.out.println("VENTA RECHAZADA: Requiere receta.");
+                ventasRechazadas = ventasRechazadas + 1;
+            } else {
+                subtotal = precio * cantidad;
+                
+                // Descuento por rangos de cantidad
+                if (cantidad >= 10 && cantidad < 20) {
+                    descuentoCantidad = 0.05;
+                } else {
+                    if (cantidad >= 20) {
+                        descuentoCantidad = 0.10;
+                    } else {
+                        descuentoCantidad = 0.0;
+                    }
+                }
+                
+                // Cálculos finales de la venta
+                valorDescuento = subtotal * (porcentajeDescCat + descuentoCantidad);
+                totalPagar = subtotal - valorDescuento;
+                
+                totalVendidoGeneral = totalVendidoGeneral + totalPagar;
+                totalDescontadoGeneral = totalDescontadoGeneral + valorDescuento;
+                
+                System.out.printf("Total a pagar: $%.2f\n", totalPagar);
+            }
+        }
+        
+        // Resumen final impreso en consola
+        System.out.println("=== RESUMEN FINAL ===");
+        System.out.printf("Total Vendido: $%.2f\n", totalVendidoGeneral);
+        System.out.printf("Total Descontado: $%.2f\n", totalDescontadoGeneral);
+        System.out.println("Ventas Rechazadas: " + ventasRechazadas);
         
         scanner.close();
     }
